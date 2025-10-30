@@ -14,7 +14,7 @@ class ImageGenerationRemoteDataSourceImpl
     // 50% error
     final random = DateTime.now().millisecond;
     if (random % 2 == 0) {
-      throw Exception('Failed to generate image: Server error');
+      throw Exception('Failed to generate image');
     }
 
     return ImageGenerationEntity(

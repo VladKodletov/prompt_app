@@ -4,10 +4,8 @@ import 'package:prompt_app/features/image_generator/domain/usecases/generate_ima
 
 part 'image_generator_event.dart';
 part 'image_generator_state.dart';
-
 class ImageGeneratorBloc extends Bloc<ImageGeneratorEvent, ImageGeneratorState> {
   final GenerateImageUseCase generateImageUseCase;
-  String? _currentPrompt;
 
   ImageGeneratorBloc({required this.generateImageUseCase}) 
       : super(const ImageGeneratorInitial()) {
@@ -19,19 +17,20 @@ class ImageGeneratorBloc extends Bloc<ImageGeneratorEvent, ImageGeneratorState> 
     GenerateImageEvent event,
     Emitter<ImageGeneratorState> emit,
   ) async {
-    _currentPrompt = event.prompt;
-    emit(ImageGeneratorLoading());
+    emit(ImageGeneratorLoading(savedPrompt: event.prompt)); 
     
     try {
       final result = await generateImageUseCase(event.prompt);
       emit(ImageGeneratorLoaded(
         imageUrl: result.imageUrl,
         prompt: event.prompt,
+        savedPrompt: event.prompt,  
       ));
     } catch (e) {
       emit(ImageGeneratorError(
         message: e.toString(),
         prompt: event.prompt,
+        savedPrompt: event.prompt,  
       ));
     }
   }
@@ -40,6 +39,6 @@ class ImageGeneratorBloc extends Bloc<ImageGeneratorEvent, ImageGeneratorState> 
     ResetGeneratorEvent event,
     Emitter<ImageGeneratorState> emit,
   ) {
-    emit(ImageGeneratorInitial(savedPrompt: _currentPrompt));
+    emit(ImageGeneratorInitial(savedPrompt: state.savedPrompt));
   }
 }
