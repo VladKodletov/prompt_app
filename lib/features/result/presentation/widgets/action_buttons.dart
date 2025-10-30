@@ -13,21 +13,14 @@ class ActionButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: OutlinedButton(
-            onPressed: () {
-              context.read<ResultBloc>().add(GenerateImage(prompt));
-            },
-            child: const Text('Try another'),
-          ),
-        ),
-        const SizedBox(width: 16),
-        const Expanded(
-          child: BackButton(),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: FilledButton(
+        onPressed: () {
+          context.read<ResultBloc>().add(GenerateImage(prompt));
+        },
+        child: const Text('Try another'),
+      ),
     );
   }
 }

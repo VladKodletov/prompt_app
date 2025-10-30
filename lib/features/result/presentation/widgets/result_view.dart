@@ -25,13 +25,26 @@ class ResultView extends StatelessWidget {
             child: Column(
               children: [
                 const Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+                const Expanded(
+                  flex: 15,
                   child: Center(
                     child: ResultContent(),
                   ),
                 ),
                 if (state.status == ResultStatus.success) ...[
                   const SizedBox(height: 16),
+                  const Expanded(
+                    flex: 1,
+                    child: SizedBox(),
+                  ),
                   ActionButtons(prompt: state.prompt),
+                  const Expanded(
+                    flex: 1,
+                    child: SizedBox(),
+                  ),
                 ],
               ],
             ),
