@@ -37,13 +37,13 @@ class ActionButtons extends StatelessWidget {
             child: OutlinedButton(
               onPressed: onNewPrompt,
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: Colors.deepPurple),
+                side: const BorderSide(color: Colors.deepPurple),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 padding: const EdgeInsets.symmetric(vertical: 16),
               ),
-              child: Text(
+              child: const Text(
                 'New Prompt',
                 style: TextStyle(color: Colors.deepPurple),
               ),
