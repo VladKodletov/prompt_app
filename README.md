@@ -1,45 +1,28 @@
-# AI Image Generator
+# AI Image Generator 🎨
 
-A modern Flutter application that generates images from text descriptions using a mock API. Built with Clean Architecture and BLoC state management.
+A modern Flutter application for generating images from text descriptions. Built with Clean Architecture and BLoC.
 
 ## 📱 Demo
+<img src="demo/demo.gif" alt="App Demo" width="400" />
 
-![App Demo](demo/demo.gif)
+## Quick Start 🚀
 
-## Getting Started
-
-### Prerequisites
-
-- Flutter SDK (latest stable version)
-- Dart SDK
-- An IDE (VS Code, Android Studio, or IntelliJ)
-
-### Installation
-
-1. Clone the repository:
 ```bash
+# Clone and install
 git clone https://github.com/VladKodletov/prompt_app.git
-```
-
-2. Navigate to the project directory:
-```bash
 cd prompt_app
-```
-
-3. Install dependencies:
-```bash
 flutter pub get
-```
 
-4. Run the app:
-```bash
+# Run the app
 flutter run
 ```
 
-## Architecture
+### Requirements
+Flutter SDK, Dart SDK, and IDE (VS Code/Android Studio)
 
-The app follows Clean Architecture principles with a feature-first approach:
+## Architecture 🏗
 
-- **Presentation Layer**: Uses BLoC pattern for state management
-- **Domain Layer**: Contains business logic and entities
-- **Data Layer**: Handles data operations and external services
+Clean Architecture with BLoC pattern:
+- 📱 **UI**: BLoC state management
+- 💡 **Domain**: Core business logic
+- 🔄 **Data**: API integration
