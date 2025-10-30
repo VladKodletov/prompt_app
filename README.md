@@ -3,7 +3,7 @@
 A modern Flutter application for generating images from text descriptions. Built with Clean Architecture and BLoC.
 
 ## 📱 Demo
-<img src="demo/demo.gif" alt="App Demo" width="300" />
+<img src="demo/demo.gif" alt="App Demo" width="240" />
 
 ## Quick Start 🚀
 
