@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'app/router.dart';
+import 'core/router/router.dart';
 import 'features/image_generator/data/datasources/image_generation_remote_data_source.dart';
 import 'features/image_generator/data/repositories/image_generation_repository_impl.dart';
 import 'features/image_generator/domain/usecases/generate_image_usecase.dart';
